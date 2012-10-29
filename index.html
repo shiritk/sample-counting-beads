@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<!-- 
+ * Copyright (c) 2012, Intel Corporation.
+ * File revision: 04 October 2012
+ * Please see http://software.intel.com/html5/license/samples 
+ * and the included README.md file for license terms and conditions.
+ *
+ * This program is licensed under the terms and conditions of the
+ * Apache License, version 2.0.  The full text of the Apache License is at
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+-->
+<html> 
+	<head> 
+        <meta name="Copyright" content="&copy; 2012, Intel Corporation. All rights reserved." />
+        <meta name="viewport" content="width=device-width target-densitydpi=device-dpi initial-scale=1 maximum-scale=1.0 user-scalable=0" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Counting beads</title> 
+
+		<link rel="stylesheet" type="text/css" href="css/countingBeads.css" />
+        <link rel="stylesheet" type="text/css" href="css/license.css" />
+
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+
+		<script type="text/javascript" src="js/deviceCheck.js"></script>
+        <script type="text/javascript" src="js/license.js"></script>
+
+        <script type="text/javascript" src="cordova-2.0.0.js"></script>
+        <script type="text/javascript" src="js/jquery.ba-throttle-debounce.js"></script>
+
+		<script type="text/javascript" src="js/mediaSound.js"></script>
+		<script type="text/javascript" src="js/countingBeads.js"></script>
+        <script type="text/javascript">
+            document.addEventListener("deviceready", onDeviceReady, false);
+        </script>
+	</head> 
+ 
+	<body>
+		<div id="introPage" class="background"  style="display:block">
+			<div id="logo"> </div>		
+			<div id="logo-mask"> </div>		
+			<div id="fruits"> 
+				<div id="strawBerry" class="intofruit"> </div>
+				<div id="orange" class="intofruit"> </div>
+				<div id="pear" class="intofruit"> </div>
+				<div id="lime" class="intofruit"> </div>
+				<div id="blueBerry" class="intofruit"> </div>				
+			</div>
+            <div id="introButtons">
+			    <div id="startBtn" class="button btnNormal" > start </div>
+			    <div id="howToBtn" class="button btnNormal" > how to play </div>	
+                <div id="licensebtnl" onclick="onclickLicenseBtn()"> i </div>
+            </div>
+        </div>
+	
+	
+		<div id="gamePage" class="background" style="display:none">
+			<div id="gpBars" class="bars">
+				<div id="gpBar0" class="bar0"> </div>
+				<div id="gpBar1" class="bar1"> </div>
+				<div id="gpBar2" class="bar2"> </div>
+				<div id="gpBar3" class="bar3"> </div>
+				<div id="gpBar4" class="bar4"> </div>
+			</div>
+			<div id="quest1" class="quest1">
+				<div id="quest1Num" class="questNum"> </div>
+				<div id="quest1Bead" class="questBead"> </div>
+				<div id="quest1Msg" style="display:none" class="kudoMsg"></div>	
+			</div>
+			<div id="quest2" class="quest2">
+				<div id="quest2Num" class="questNum"> </div>
+				<div id="quest2Bead" class="questBead"> </div>
+				<div id="quest2Msg" style="display:none" class="kudoMsg"></div>			
+			</div>
+			<div id="quest3" class="quest3">
+				<div id="quest3Num" class="questNum"> </div>
+				<div id="quest3Bead" class="questBead"> </div>
+				<div id="quest3Msg"  style="display:none" class="kudoMsg"></div>	
+			</div>
+			
+			<div id="gpCup" class="cup emptyCup"> </div>
+			<div id="gpTotal" class="total"> 0 </div>
+			<div id="gpRestart" style="cursor: pointer"> start over? </div>		
+		</div>
+		
+		<div id="howToPage" class="background" style="display:none">
+			<div id="htpBars" class="bars"> 
+				<div id="htpBar0" class="bar0"> </div>
+				<div id="htpBar1" class="bar1"> </div>
+				<div id="htpBar2" class="bar2"> </div>
+				<div id="htpBar3" class="bar3"> </div>
+				<div id="htpBar4" class="bar4"> </div>
+			</div>
+			<div id="htpQuest1" class="quest1">
+				<div id="htpQuest1Num" class="questNum" style="color: #9fca38;"> 5 </div>
+				<div id="htpQuest1Bead" class="questBead"> </div>
+				<div id="quest1Hint"> 
+					<div id="htpQuest1Msg" class="hint msg">how many beads you need to move</div>
+				</div>
+			</div>
+			<div id="htpQuest2" class="quest2">
+				<div id="htpQuest2Num" class="questNum" style="color: #20abc4;"> 1 </div>
+				<div id="htpQuest2Bead" class="questBead"> </div>
+			</div>
+			<div id="htpQuest3" class="quest3">
+				<div id="htpQuest3Num" class="questNum" style="color: #ff8b0e;"> 3 </div>
+				<div id="htpQuest3Bead" class="questBead"> </div>
+			</div>
+			
+			
+			<div id="moveBeadsHint">
+				<div id="moveMsg" class="hint msg">move 5 green beads</div>
+			</div>
+			
+			<div id="countHint">
+				<div id="countMsg" class="hint msg">count as you go</div>
+			</div>
+			
+			<div id="cupFillHint">
+				<div id="cupFillMsg" class="hint msg">watch the cup fill up!</div>
+			</div> 
+
+
+			<div id="htpCup" class="cup emptyCup"> </div>
+			<div id="htpTotal" class="total"> 0 </div>
+			<div id="htpRestart"> start over? </div>	
+		</div>
+		
+		<div id="finishPage" class="background" style="display:none">
+		
+			<div id="bar"> </div>
+			<div id="slideMsg"> slide to next game </div>
+			<div id="fruitBar"  class="ui-widget-content"> 
+				<div id="sbFinishPage" class="finishfruit"> </div>
+				<div id="orngFinishPage" class="finishfruit"> </div>
+				<div id="pearFinishPage" class="finishfruit"> </div>
+				<div id="limeFinishPage" class="finishfruit"> </div>
+				<div id="bbFinishPage" class="finishfruit"> </div>					
+			</div>
+			<div id="finishMsg"> good job! </div>
+			<div id="finishCup"> </div>
+			<div id="newBtn"> new </div>
+		</div>
+
+        <div id="licensepage" style="display: none">
+           <div id="licensetext" ></div>
+            <div id="licensebtnq" class="licensebtn" onclick="onclickLicBack()" >Back</div>
+        </div>
+
+		<!-- Audio files loaded here -->
+		<audio id="introMusicLoop" loop="true" preload="auto"><source src="audiomp3/introMusicLoop.mp3" type="audio/mp3" /></audio>
+		<audio id="beginGame" preload="auto"><source src="audiomp3/beginGame.mp3" type="audio/mp3" /></audio>
+		<audio id="fillCup" preload="auto"><source src="audiomp3/goodFillCup.mp3" type="audio/mp3" /></audio>
+		<audio id="gameWin" preload="auto"><source src="audiomp3/goodGameWin.mp3" type="audio/mp3" /></audio>
+		<audio id="introMusic" preload="auto"><source src="audiomp3/introMusic.mp3" type="audio/mp3" /></audio>
+		<audio id="moveBead" preload="auto"><source src="audiomp3/moveBead.mp3" type="audio/mp3" /></audio>
+		<audio id="startClick" preload="auto"><source src="audiomp3/startClick.mp3" type="audio/mp3" /></audio>
+	
+	</body> 
+</html> 

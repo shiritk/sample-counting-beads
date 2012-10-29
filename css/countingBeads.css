@@ -1,0 +1,971 @@
+/*
+* Copyright (c) 2012, Intel Corporation
+* File revision: 04 October 2012
+* Please see http://software.intel.com/html5/license/samples 
+* and the included README.md file for license terms and conditions.
+*
+* This program is licensed under the terms and conditions of the 
+* Apache License, version 2.0.  The full text of the Apache License is at
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+*/
+
+@font-face {
+    font-family: Slackey;
+    src: url("../fonts/Slackey.ttf") format("opentype");
+}
+
+
+body {
+    margin: 0px;
+    -webkit-user-select: none;
+    background-color: #ffffff;
+}
+
+.background {
+	background-position: center;
+	background-repeat: no-repeat;
+    background-size: 100% 100%;
+    
+    display: box;
+    box-align: center;
+    box-pack: center;
+    box-orient: vertical;
+    box-shadow: 5px 5px 20px black;
+    position: absolute;
+    overflow: hidden;
+    cursor: default;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Intro Page styling starts */
+#introPage {
+	background-image: url("../images/intro/background.jpg");
+}
+
+#logo {
+	top: 10%; /*60px;*/
+    left: 10%; /*145px;*/
+    width: 80%; /*761px;*/
+    height: 15%; /*85px;*/
+    background-color: #432;
+    background-image: url("../images/intro/counting_beads.png") ;
+	background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+	opacity: 0.4;
+	display: block;
+	position:relative; /*absolute;	*/
+	z-index:3;
+}
+
+#fruits 
+{
+	top: 20%;
+    left: 20%;
+    width: 80%;
+    height: 10%;
+	position: relative;	
+	z-index:3;	
+}
+
+.intofruit 
+{
+    width: 75px;
+    height: 90px; 
+}
+
+#strawBerry 
+{
+	top: 20px;
+    left: 0%; 
+    background-image: url("../images/intro/strawberry.png") ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%; 
+	display: block;
+	position: relative;
+	z-index:3;
+}
+
+
+#orange {
+	top: 0px;
+    left: 15%;
+    background-image: url("../images/intro/orange.png") ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%; 
+	display: block;
+	position: absolute; 	
+	z-index:3;
+}
+
+#pear {
+	top: 20px;
+    left: 30%;
+    background-image: url("../images/intro/pear.png") ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%; 
+	display: block;
+	position: absolute; 
+	z-index:3;	
+}
+
+#lime {
+	top: 0px;
+    left: 45%; 
+    background-image: url("../images/intro/lime.png") ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%; 
+	display: block;
+	position: absolute;
+	z-index:3;	
+}
+
+#blueBerry {
+	top: 25px;
+    left: 60%;
+    background-image: url("../images/intro/blueberry.png") ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%; 
+	display: block;
+	position: absolute;
+	z-index:3;	
+}
+
+.button {
+	z-index:3;
+    width: 50%;
+    height: 80px;
+	left: 25%;
+	background-image: url("../images/buttons/intropage_button.png");
+	background-repeat: no-repeat;
+	background-size: 100% 90%; 
+	background-position: center;
+	display: block;
+	position: relative;
+}
+
+.btnNormal {
+	z-index:10;
+	text-align: center;
+	font-weight: Bold;
+    font-family: Slackey;
+    color: #c3d75c;		
+	line-height: 80px;
+	-webkit-transition: font-size 250ms;
+	-moz-transition: font-size 250ms;
+	transition: font-size 250ms;
+}
+
+#introButtons 
+{
+    position:relative;
+    top:42%;
+}
+
+
+body:hover #strawBerry {
+/* ;paf; div#strawBerry:hover {*/
+	-webkit-animation: strawBerryWave 1000ms infinite alternate ease-in-out;
+	-ms-animation: strawBerryWave 1000ms infinite alternate ease-in-out;
+}
+@-webkit-keyframes strawBerryWave {
+	0% {top:  20px; } 
+	100% {top: 0px;}
+}
+
+body:hover #orange {
+/* ;paf; div#orange:hover {*/
+	-webkit-animation: orangeWave 1000ms infinite alternate ease-in-out;		
+	-webkit-animation-delay:50ms;
+}
+
+@-webkit-keyframes orangeWave {
+	0% {top:  0px; } 
+	100% {top: 20px;}
+}
+
+body:hover #pear {
+/* ;paf; div#pear:hover {*/
+	-webkit-animation: pearWave 1000ms infinite alternate ease-in-out;	
+	-webkit-animation-delay:500ms;
+}
+
+@-webkit-keyframes pearWave {
+	0% {top:  20px; } 
+	100% {top: 0px;}
+}
+
+body:hover #lime {
+/* ;paf; div#lime:hover {*/
+	-webkit-animation: limeWave 1000ms infinite alternate ease-in-out;		
+	-webkit-animation-delay:750ms;
+}
+
+@-webkit-keyframes limeWave {
+	0% {top:  0px; } 
+	100% {top: 20px;}
+}
+
+body:hover #blueBerry {
+/* ;paf; div#blueBerry:hover {*/
+	-webkit-animation: blueBerryWave 1000ms infinite alternate ease-in-out;	
+	-webkit-animation-delay:1000ms;	
+}
+
+@-webkit-keyframes blueBerryWave {
+	0% {top:  25px; } 
+	100% {top: 0px;}
+}
+
+/* Intro Page styling ends */
+
+
+/* Game Page styling starts */
+#gamePage {
+	background-image: url("../images/beads_background.jpg");
+}
+
+.bars {
+	z-index:3;
+    width: 70%; 
+    height: 60%; 
+	left: 27%; 
+	top: 20%; 
+	background-image: url("../images/bars_group.png");
+	background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+	display: block;
+	position: relative;		
+}
+
+.cup {
+	z-index:3;
+    width: 6%; 
+    height: 8%;
+	left: 5%; 
+	top: 68%; 
+	background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+	display: block;
+	position: absolute;	
+}
+
+.emptyCup {
+	background-image: url("../images/cup_character/empty_cup.png");
+}
+
+.quarterCup {
+	background-image: url("../images/cup_character/quarter_cup.png");
+}
+
+.halfCup {
+	background-image: url("../images/cup_character/half_cup.png");
+}
+
+.fullCup {
+	background-image: url("../images/cup_character/full_cup.png");
+}
+
+.total {
+	z-index:3;
+	text-align: center;
+	font-weight: Bold;
+    font-family: Slackey;
+    color: #6d4a3a;		
+	width: 4%;
+    height: 4%;
+	left: 16%;
+	top: 61%; 
+    line-height: 96px;  
+	position: absolute;
+    display: block;
+}
+
+#gpRestart, #htpRestart {
+	z-index:3;
+	font-family: Slackey;
+	color: #e7462b;		
+	left: -2%;
+	top: 85%; 
+    line-height: 37px;  
+	text-align: center;
+	position: absolute;	
+	-webkit-transition: font-size 250ms;
+	-moz-transition: font-size 250ms;
+	transition: font-size 250ms;
+}
+
+.questNum {
+	z-index:10;
+	left:20%;
+	top: 5%;
+	height: 5%;
+	width: 5%;
+	font-family: Slackey; /*Slackey;*/
+    /*line-height: 96px;  */
+    line-height: 20%;
+	text-align: center;
+	position: absolute; 
+	display: block;
+}
+
+.questBead {
+	z-index:10;
+	left:60%;
+	top: 35%;
+	height: 31px;
+	width: 33px;	
+	position: absolute;
+	display: block;
+}
+
+
+.quest1 {
+	left:6%; /*28px;*/
+	top: 12%; /*22px;*/
+	height:5%; /*105px;*/
+	width: 5%; /*215px;*/
+	position: absolute;
+	display: none;
+}
+
+.quest2 {
+	left:6%; /*28px;*/
+	top: 32%; /*147px;*/
+	height:5%; /*105px;*/
+	width: 5%; /*215px;*/
+	position: absolute;
+	display: none;
+}
+
+.quest3 {
+	left:6%; /*28px;*/
+	top: 52%; /* 272px;*/
+	height:5%; /*105px;*/
+	width: 5%; /*215px;*/
+	position: absolute;
+	display: none;
+}
+
+
+.quest4 {
+	left:6%; /*28px;*/
+	top: 80%; /*397px;*/
+	height:5%; /*105px;*/
+	width: 5%; /*215px;*/
+	position: absolute;
+	display: none;
+}
+
+.kudoMsg {
+	z-index:10;	
+	top:5%;
+	left:-10px;
+	width:120px;
+	position: absolute;	
+	text-align: center;
+	font-family: Slackey;
+    line-height: 1.2em;  
+	display: block;
+	word-wrap: break-word;
+	-webkit-transform: translateY(-50%); 
+	-moz-transform: translateY(-50%); 
+	transform: translateY(-50%); 
+}
+
+.fruiteimg1 
+{
+	background-image: url("../images/fruit/strawberry.png");
+	width: 46px;
+	height: 53px; 
+}
+.fruiteimg2 
+{
+	background-image: url("../images/fruit/orange.png");
+	width: 43px;
+	height: 46px; 
+}
+.fruiteimg3 
+{
+	background-image: url("../images/fruit/pear.png");
+	width: 46px;
+	height: 63px; 
+}
+.fruiteimg4 
+{
+	background-image: url("../images/fruit/lime.png");
+	width: 43px;
+	height: 46px; 
+}
+.fruiteimg5 
+{
+	background-image: url("../images/fruit/blueberry.png");
+	width: 43px;
+	height: 46px; 
+}
+
+.bar0 {
+	left:5px;
+	top: -4%; /*-8%; /*-20px;*/
+	height:50px; /*53px;*/
+	width:700px;
+	position: absolute; /*absolute;	*/
+}
+
+.bar1 {
+	left:5px;
+	top: 21%; /*20%; /*94px;*/
+	height:50px; /*46px;*/
+	width:700px;
+	position: absolute;	
+}
+
+.bar2 {
+	left:5px;
+	top: 44%; /*40%; /*190px;*/
+	height:50px; /*63px;*/
+	width:700px;
+	position: absolute;	
+}
+
+.bar3 {
+	left:5px;
+	top: 70%; /*68%; /*321px;*/
+	height:50px; /*46px;*/
+	width:700px;
+	position: absolute;	
+}
+
+.bar4 {
+	left:5px;
+	top: 94%; /*92%; /*432px;*/
+	height:50px; /*46px;*/
+	width:700px;
+	position: absolute;	
+}
+
+.gameFruit {
+	-webkit-animation: fruitsWobble 1000ms infinite alternate ease-in-out;		
+	-moz-animation: fruitsWobble 1000ms infinite alternate ease-in-out;		
+	animation: fruitsWobble 1000ms infinite alternate ease-in-out;		
+}
+
+@-webkit-keyframes fruitsWobble {	
+	0% { -webkit-transform: rotate(15deg);} 
+	100% {-webkit-transform: rotate(-15deg);}
+}
+
+@-moz-keyframes fruitsWobble {	
+	0% { -moz-transform: rotate(15deg);} 
+	100% {-moz-transform: rotate(-15deg);}
+}
+
+@keyframes fruitsWobble {	
+	0% { transform: rotate(15deg);} 
+	100% { transform: rotate(-15deg);}
+}
+
+/* Game Page style ends*/
+
+
+/* How To Page style starts */
+#howToPage {
+	background-image: url("../images/beads_background.jpg");
+}
+
+#htpQuest1 {
+	display: block ;
+}
+
+#htpQuest2 {
+	display: block ;
+}
+
+#htpQuest3 {
+	display: block ;
+}
+#htpQuest1Bead {
+	background-image : url("../images/counter_dots/green_counter.png"); 
+    transform: translate(50px,-5px);
+    -ms-transform: translate(50px,-5px); /* IE 9 */
+    -webkit-transform: translate(50px,-5px); /* Safari and Chrome */
+    -o-transform: translate(50px,-5px); /* Opera */
+    -moz-transform: translate(50px,-5px); /* Firefox */
+	display:block;
+}
+#htpQuest2Bead {
+	background-image : url("../images/counter_dots/blue_counter.png"); 
+    transform: translate(50px,-5px);
+    -ms-transform: translate(50px,-5px); /* IE 9 */
+    -webkit-transform: translate(50px,-5px); /* Safari and Chrome */
+    -o-transform: translate(50px,-5px); /* Opera */
+    -moz-transform: translate(50px,-5px); /* Firefox */
+	display:block;
+}
+#htpQuest3Bead {
+	background-image : url("../images/counter_dots/orange_counter.png"); 
+    transform: translate(50px,-5px);
+    -ms-transform: translate(50px,-5px); /* IE 9 */
+    -webkit-transform: translate(50px,-5px); /* Safari and Chrome */
+    -o-transform: translate(50px,-5px); /* Opera */
+    -moz-transform: translate(50px,-5px); /* Firefox */
+	display:block;
+}
+
+#quest1Hint {
+	z-index:7;	
+	/*
+	width: 650px; 
+    height: 225px;
+    */
+	left: 70px;
+	top: -60px;	
+    
+	position: absolute;	
+	background-image: url("../images/direction_page/direction_1.png");
+	background-size: 100% 100%;
+    display: block;
+}
+
+
+.msg {
+	z-index:10;	
+	top:10%;
+	left:10%;
+	height:90%;
+	width: 85%;
+	position: absolute;	
+	text-align: center;
+}
+
+.hint {
+	z-index:3;
+	font-family: Slackey;
+	color: #c3d75c;		
+	/*font-size: 46px;  */
+    line-height: 70px;  
+	text-align: center;
+	display: block;
+	max-width: 834px;
+	position: absolute;	
+	word-wrap: break-word;
+}
+
+#moveBeadsHint {
+	z-index:7;	
+	width: 400px; /*327px;*/
+    height: 250px; /*365px;	*/
+	left: 30%;/*559px;*/
+	top: -45%; /*50px;*/
+	position: relative; /*absolute;	*/
+	background-image: url("../images/direction_page/direction_2.png");
+	background-repeat: no-repeat;
+    background-position: center;
+	background-size: 100% 100%; 
+    display: none;	
+}
+
+#countHint { 
+	z-index:7;	
+	width: 520px; /*449px;*/
+    height: 250px; /*250px;	*/
+	left: 23%; /*226px;*/
+	top: -15%; /*285px;	*/
+	position: relative;	
+	background-image: url("../images/direction_page/direction_3.png");
+    background-position: center;
+	background-size: 100% 100%; 
+    display: none;	
+}
+
+#cupFillHint {
+	z-index:7;	
+	width: 426px;
+    height: 274px;	
+	left: 1%; /*10px;*/
+	top: -35%; /*140px;	*/
+	position: relative;	
+	background-image: url("../images/direction_page/direction_4.png");
+    display: none;	
+}
+
+
+/* How To Page style ends */
+
+/* Finish Page style starts */
+
+#finishPage {
+	background-image: url("../images/finished_page/slider_background.jpg");
+}
+
+#bar {
+	z-index:3;	
+	width: 1024px;
+    height: 23px;	
+	left: 0px;
+	top: 70%; /*444px;	*/
+	position: absolute;	
+	background-image: url("../images/finished_page/bar.png");
+    display: block;	
+}
+
+#fruitBar {
+	z-index:5;	
+	width: 50%; /*1024px; */
+    height: 20%; /*128px;	*/
+	left: 1%; /*20px;*/
+	top: 58%; /*366px;	*/
+	position: absolute;	
+}
+
+body:hover #sbFinishPage, #orngFinishPage, #pearFinishPage, #limeFinishPage, #bbFinishPage, #finishCup{
+	-webkit-animation: fruitsRock 1000ms infinite alternate ease-in-out;		
+	-moz-animation: fruitsRock 1000ms infinite alternate ease-in-out;		
+}
+
+@-webkit-keyframes fruitsRock {	
+	0% { -webkit-transform: rotate(4deg);} 
+	100% {-webkit-transform: rotate(-4deg);}
+}
+
+@-moz-keyframes fruitsRock {	
+	0% { -moz-transform: rotate(4deg);} 
+	100% {-moz-transform: rotate(-4deg);}
+}
+
+#sbFinishPage {
+	top: 22px;
+    left: 1%;/*0px;*/
+    /*
+    width: 96px;
+    height: 110px;
+    */
+    background-image: url("../images/finished_page/strawberry.png") ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%; 
+	display: block;
+	position: absolute;	
+	z-index:7;
+}
+
+.finishfruit 
+{
+    width: 96px;
+    height: 110px; 
+}
+
+#orngFinishPage {
+	top: 37px;
+    left: 15%; /* 87px;*/
+    background-image: url("../images/finished_page/orange.png") ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%; 
+	display: block;
+	position: absolute;		
+	z-index:7;
+}
+
+#pearFinishPage {
+	top: 2px;
+    left: 35%; /*175px;*/
+    background-image: url("../images/finished_page/pear.png") ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%; 
+	display: block;
+	position: absolute;	
+	z-index:7;	
+}
+
+#limeFinishPage {
+	top: 37px;
+    left: 55%; /*261px;*/
+    background-image: url("../images/finished_page/lime.png") ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%; 
+	display: block;
+	position: absolute;	
+	z-index:7;	
+}
+
+#bbFinishPage {
+	top: 37px;
+    left:65%; /* 345px;*/
+    background-image: url("../images/finished_page/blueberry.png") ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%; 
+	display: block;
+	position: absolute;	
+	z-index:7;	
+}
+
+#finishMsg {
+	z-index:3;
+	font-family: Slackey;
+	color: #6d4a3a;	
+	left: 5%; /*153px;*/
+	top: 5%; /*80px;*/
+    line-height: 80px; /*122px;  */
+	text-align: center;
+	position: absolute;	
+	display: block;
+}
+
+#slideMsg {
+	z-index:3;
+	font-family: Slackey;
+	color: #6d4a3a;	
+	left: 55%; /*487px; */
+	top: 70%; /*397px;*/
+	width: 50%; /*450px;*/
+    height: 75px;	
+	font-size: 28pt;  
+    line-height: 50px;  
+	text-align: left;
+	position: absolute;	
+	display: block;
+}
+
+#finishCup {
+	top: 10%; /*100px;*/
+    left: 80%; /*835px;*/
+    width: 20%; /*100px;*/
+    height: 25%; /*150px;*/
+    background-image: url("../images/finished_page/cup.png") ;
+	background-repeat: no-repeat;
+	background-size: 100% 100%; 
+	display: block;
+	position: absolute;	
+	z-index:7;
+}
+
+#newBtn {
+	z-index:3;
+    width: 50%; /*250px; */
+    height: 80px;
+	left: 30%; /*387px;*/
+	top: 40%; /*250px;*/
+	background-image: url("../images/buttons/finishpage_button.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	display: block;
+	position: absolute;		
+	text-align: center;
+	font-size: 38px; 
+	font-weight: Bold;
+    font-family: Slackey;
+    color: #c3d75c;		
+	line-height: 80px;  
+	transition: font-size 250ms;
+	-webkit-transition: font-size 250ms;
+	-moz-transition: font-size 250ms;
+}
+
+@-webkit-keyframes fruitBarSlide {
+	0% {left:  20px; } 
+	100% {left: 100px;}
+}
+
+@-moz-keyframes fruitBarSlide {
+	0% {left:  20px; } 
+	100% {left: 100px;}
+}
+
+@keyframes fruitBarSlide {
+	0% {left:  20px; } 
+	100% {left: 100px;}
+}
+
+#slideMsg:hover #fruitBar {
+	-webkit-animation: fruitBarSlide 1000ms infinite alternate linear;		
+	-moz-animation: fruitBarSlide 1000ms infinite alternate linear;		
+	animation: fruitBarSlide 1000ms infinite alternate linear;		
+}
+
+/* Finish Page style ends */
+
+/* for big width screen */
+@media only screen/* and (min-width: 1281px)*/
+{
+    .btnNormal {
+    	font-size: 30px;
+    }
+    .btnNormal:hover{
+	    font-size: 36px;
+    }
+    .total {
+	    font-size: 38pt;  
+    }
+    #gpRestart, #htpRestart {
+	    width: 235px;
+        height: 37px;	
+	    font-size: 18pt;  
+    }
+    #gpRestart:hover, #htpRestart:hover {
+	    font-size: 24pt;
+    }
+    .questNum {
+	    font-size: 58pt;  
+    }
+    .kudoMsg {
+	    font-size: 28px;  
+    }
+    .hint {
+	    font-size: 42px; /*46px; **** */
+    }
+    #finishMsg 
+    {
+	    width: 60%; /*682px;*/
+        height: 122px;	
+	    font-size: 68pt;  
+    }
+    #quest1Hint {
+	    width: 650px; /*834px;*/
+        height:225px;
+    }
+    .total {
+	   top: 65%; /*395px;*/
+    }
+}
+
+/* for small-width screen: 640 x960 horizontal & vertical */
+@media only screen and (max-width: 960px) and (max-height: 960px) {
+/*@media only screen and (min-width: 480px) and (max-width: 799px) {*/
+    .btnNormal {
+    	font-size: 24px;
+    }
+    .btnNormal:hover{
+	    font-size: 30px;
+    }
+    .button {
+        height: 70px;
+    }
+    #introButtons 
+    {
+        top: 36%;
+    }
+    
+    .total {
+	    font-size: 32pt;  
+    }
+    #gpRestart, #htpRestart {
+	    width: 235px;
+        height: 37px;	
+	    font-size: 18pt;  
+    }
+    #gpRestart:hover, #htpRestart:hover {
+	    font-size: 24pt;
+    }
+    .questNum 
+    {
+	    font-size: 52pt; 
+    }
+    .kudoMsg {
+	    font-size: 20px;  
+    }
+    .hint {
+	    font-size: 36px;  
+    }
+    #finishMsg 
+    {
+	    width: 60%; /*682px;*/
+        height: 122px;	
+	    font-size: 54pt;  
+    }
+    #quest1Hint {
+	    width: 500px; 
+        height: 225px;
+    }
+    .questBead {
+	    background-size: 100% 100%;; 
+    	background-repeat: no-repeat;
+    }
+    .total {
+	   top: 65%; /*395px;*/
+    }
+}
+
+/* for smaller-width screen: 800x480 horizontal or vertical */
+/* @media all and (max-width: 699px) and (min-width: 520px), (min-width: 1151px) */
+@media only screen and (max-width: 800px) and (max-height:800px)
+{
+    #introButtons 
+    {
+        top: 33%;
+    }
+    .button {
+        height: 60px;
+	    left: 20%; /*325px;*/
+    }
+    .intofruit 
+    {
+        width: 65px;
+        height: 70px; 
+    }
+    .finishfruit 
+    {
+        width: 60px;
+        height: 75px; 
+    }
+
+    .btnNormal {
+    	font-size: 20px;
+    }
+    .btnNormal:hover{
+	    font-size: 26px;
+    }
+    
+    .total {
+	    font-size: 28pt;  
+    }
+    
+    #gpRestart, #htpRestart {
+	    width: 235px;
+        height: 37px;	
+	    font-size: 12pt;  
+    }
+    #gpRestart:hover, #htpRestart:hover {
+	    font-size: 14pt;
+    }
+    .questNum 
+    {
+	    font-size: 42pt; 
+    }
+    .kudoMsg {
+	    font-size: 18px;  
+    }
+    .hint {
+	    font-size: 32px;  
+    }
+    #finishMsg 
+    {
+	    width: 60%; /*482px;*/
+        height: 122px;
+	    font-size: 36pt;  
+    }
+    #quest1Hint {
+	    width: 300px; 
+        height: 350px;
+	    left: 70px;
+	    top: -100px;
+    }
+    .questBead {
+    	left:5%;
+	    background-size: 80% 80%;; 
+    	background-repeat: no-repeat;
+    }
+    #slideMsg {
+    	top: 65%; /*397px;*/
+	    font-size: 18pt;
+    }
+    .total {
+	   top: 62%; /*395px;*/
+    }
+    #gpRestart, #htpRestart {
+	    left: -6%; /*28px;*/
+    }
+}
