@@ -5,14 +5,16 @@
 ----------------------------------------------------------------------------
 This sample application is modified from original Tizen* Counting Beads game app. 
 It is ported to work with PhoneGap* on Android* and Windows 8* UI. The app 
-demonstrates the use of the jQuery and jQuery Mobile libraries to implement a 
-simple touch interface. 
+demonstrates the use of the jQuery and jQuery Mobile libraries and targets
+young kids to teach them the basic counting.
 
-Important App Files
+License Information Follows
 ---------------------------
-* index.html
-* icon.png
+* abstract.txt
+* app.json
+* screenshot.png
 * config.xml
+* index.html
 * css/countingBeads.css
 * css/default.css
 * css/deviceCheck.js
@@ -20,12 +22,8 @@ Important App Files
 * js/countingBeads.js
 * js/default.js
 * js/deviceCheck.js
-* js/jquery-1.7.2.min.js
-* js/jquery.ba-throttle-debounce.js
 * js/license.js
 * js/mediaSound.js
-* audiomp3/*.mp3
-* images/*.png *.jpg
 
 License Information Follows
 ---------------------------
@@ -57,34 +55,30 @@ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
 OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ----------------------------------------------------------------------------
-												
-    COUNTING BEADS
-
-----------------------------------------------------------------------------
-
-A Counting beads application implemented in HTML5/JavaScript targeting 
-young kids to teach them the basic counting.
-
-Author: Sirisha Muppavarapu <sirisha.muppavarapu@intel.com>
+Original Author and License
+Author : Sirisha Muppavarapu <sirisha.muppavarapu@intel.com>
 
 Technical Details: This application is written using HTML5/css3/jquery 
 javascript library and is distributed under Apache2.0 license. 
+Apache2.0 license: LICENSE.txt
+----------------------------------------------------------------------------
 
 License for the app is found in the file "LICENSE" and the license for 
 JQuery and assets components is as below:
 
-jQuery JavaScript Library v1.7.2
+----------------------------------------------------------------------------
+jQuery JavaScript Library v1.7.2: js\jquery-1.7.2.min.js
 Copyright 2011, John Resig
 Dual licensed under the MIT or GPL Version 2 licenses.
 http://jquery.org/license
 
-IMAGES
+IMAGES: *.png; images/*.png
 ----------------------------------------------------------------------------
 all images are created by Intel Corp.
 they are licensed under the Creative Commons Attribution 3.0 license
 http://creativecommons.org/licenses/by/3.0/us/
 
-FONTS 
+FONTS: *.ttf
 ----------------------------------------------------------------------------
 Google web font - Slackey
 http://www.google.com/webfonts#UsePlace:use/Collection:Slackey
@@ -144,7 +138,7 @@ Cordova (PhoneGap) Library
 * license:  http://www.apache.org/licenses/LICENSE-2.0.html
 
 
-Ben Alman's jquery throttle-debounce plugin
+Ben Alman's jquery throttle-debounce plugin: js\jquery.ba-throttle-debounce.js
 --------------------------
 * source: https://github.com/cowboy/jquery-throttle-debounce
 * Dual licensed under the MIT and GPL licenses: http://benalman.com/about/license/ 

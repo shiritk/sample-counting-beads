@@ -8,7 +8,7 @@
     version   = "0.0.1">
   
   <name>Counting Beads</name>
-  <icon src="icon.png"/>
+  <icon src="icon_72.png"/>
   <content src="index.html"/>
   <description>
     A basic counting game like in the ancient times targeting young kids.
