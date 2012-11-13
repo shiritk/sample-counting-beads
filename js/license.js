@@ -34,35 +34,12 @@ function onclickLicBack()
 }
 
 function loadLicenseTxt() {
-    if (window.device) { // running in PhoneGap
-        console.log("***Test: start read README.txt in PhoneGap mode");
+    if (typeof window.device !== "undefined") { // running in PhoneGap
 
-        var licFname;
-        if (phoneCheck.android) // android
-            licFname = "/android_asset/www/README.txt";
-        else if (phoneCheck.iphone) // iPhone
-            licFname = "/README.txt";
-        else if (phoneCheck.windows7) // windows 7.1 phone
-            licFname = "/app/www/README.txt";
-        else // Metro
-            licFname = "ms-appx:///README.txt"
-
-        var readRequest = new XMLHttpRequest();
-        readRequest.open("GET", licFname);
-        readRequest.onreadystatechange = function () {//Call a function when the state changes.
-            if (readRequest.readyState == 4 && readRequest.status == 200) {
-                var divLicense = document.getElementById("licensetext");
-
-                // the following style will make the license page blank till you touch it. 
-                // --------so do not set height/width 
-                //divLicense.style.height = window.innerHeight * 0.88 + "px";
-                //divLicense.style.width = window.innerWidth * 0.995 + "px";
-                divLicense.innerText = readRequest.responseText;
-
-                console.log("***Test:  finish reading README.txt***");
-            }
-        }
-        readRequest.send();
+        $.get('README.txt', function (data) {
+            var divLicense = document.getElementById("licensetext");
+            divLicense.innerText = data;
+        });
     }  else {
         // running as web app from Browser, so use iframe to display the README.txt
         console.log("***Test: read README.txt iframe");
