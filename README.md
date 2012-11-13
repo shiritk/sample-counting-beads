@@ -24,6 +24,8 @@ License Information Follows
 * js/deviceCheck.js
 * js/license.js
 * js/mediaSound.js
+* win8-imgs/: logo.png, pop_up_blank.png, smalllogo.png, splashscreen.png, storelogo.png
+* win8-proj/: HTML5_CountingBeads.jsproj, HTML5_CountingBeads_TemporaryKey.pfx, package.appxmanifest
 
 License Information Follows
 ---------------------------
