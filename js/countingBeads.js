@@ -267,6 +267,27 @@ function startNewGame(e)
 }
 
 function handleResizeWin() { 
+    // set proper kudo msg after window resized
+	for(var i=0;i<3;i++) {	
+        var questionIndex=i+1;
+		var elemNum = document.getElementById("quest"+questionIndex+"Num");
+        var eleKudoMsg = document.getElementById("quest"+questionIndex+"Msg");
+        if ($(window).width() > 640) { // if "*" displayed, change to kudo msg.
+            if ((elemNum.innerText == "*") && (elemNum.style.display == "block") && (eleKudoMsg.style.display == "none")) {
+    		    elemNum.style.display = "none";
+                elemNum.innerText = questions[i].number; 
+			    eleKudoMsg.style.display = "block";
+            } 
+        }
+        if ($(window).width() <= 640) { // if kudo msg displayed, change to "*".
+            if ((elemNum.innerText != "*") && (elemNum.style.display == "none") && (eleKudoMsg.style.display == "block")) {
+                elemNum.innerText = "*"; 
+    		    elemNum.style.display = "block";
+			    eleKudoMsg.style.display = "none";
+            } 
+        }
+	}
+
     // redraw bar & beads with resized window
     if (fruiteBarPopulatedGamePage == 1)
         repopulateBars(gamePage);
@@ -281,7 +302,7 @@ function init()
     
     init_done = true; 
 
-    $(window).resize($.debounce(500, handleResizeWin));
+    $(window).resize($.debounce(250, handleResizeWin));
 
     // debug music issue
     if (myDeviceSupport.HTML5_audio_mp3)
@@ -494,18 +515,33 @@ function setKudoMsg(rightBeads,row,questionIndex,resetMsgs)
 			questions[i].answered = false;
 		} else if(questions[i].rowIndex == row) {
 			if(questions[i].number == rightBeads) {
-				var elem = document.getElementById("quest"+questionIndex+"Msg");
-				elem.style.display = "block";
-				elem = document.getElementById("quest"+questionIndex+"Num");
-				elem.style.display = "none";
+				var elem;
+                console.log("window.width: " + $(window).width());
+                if ($(window).width() <= 640) {
+                    // do not display msg - too long for the small screen
+                    elem = document.getElementById("quest"+questionIndex+"Msg");
+				    elem.style.display = "none"; 
+				    elem = document.getElementById("quest"+questionIndex+"Num");
+                    elem.innerText = "*"; 
+    				elem.style.display = "block";
+                } else {
+                    elem = document.getElementById("quest"+questionIndex+"Msg");
+				    elem.style.display = "block";
+				    elem = document.getElementById("quest"+questionIndex+"Num");
+    				elem.style.display = "none";
+                }
 				elem = document.getElementById("quest"+questionIndex+"Bead");
 				elem.style.display = "none";
 				questions[i].answered = true;
 			} else {
-				var elem = document.getElementById("quest"+questionIndex+"Msg");
+				var elem;
+                elem = document.getElementById("quest"+questionIndex+"Msg");
 				elem.style.display = "none";
 				elem = document.getElementById("quest"+questionIndex+"Num");
 				elem.style.display = "block";
+                if ($(window).width() <= 640) {
+                    elem.innerText = questions[i].number; 
+                } 
 				elem = document.getElementById("quest"+questionIndex+"Bead");
 				elem.style.display = "block";
 				questions[i].answered = false;
