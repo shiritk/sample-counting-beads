@@ -29,6 +29,11 @@ var init_done=false;
 
 var introMusicLoop, beginGame, fillCup, gameWin, introMusic, moveBead, startClick;
 
+/* console.log et al are not always available in Firefox. This silences it and prevents a JS error. */
+if(typeof console === "undefined") {
+    console = { log: function() { } };
+}  
+
 function fruit(image,width,height)
 {
 	this.image = image;

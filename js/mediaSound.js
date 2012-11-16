@@ -22,10 +22,6 @@ function gamesound(id, loop) {
     {
         if (phoneCheck.android) // android
             this.mediaobj = new Media("/android_asset/www/audiomp3/" + id + ".mp3", this.mediaCallSuccess, this.mediaCallError);
-        else if (phoneCheck.iphone) // iPhone
-            this.mediaobj = new Media("/audiomp3/" + id + ".mp3", this.mediaCallSuccess, this.mediaCallError);
-        else if (phoneCheck.windows7) // windows 7.1 phone
-            this.mediaobj = new Media("/app/www/audiomp3/" + id + ".mp3", this.mediaCallSuccess, this.mediaCallError);
     } else
         this.mediaobj = document.getElementById(id);
 
