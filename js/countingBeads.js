@@ -11,7 +11,7 @@
 */
 
 var beadImages = ["./images/fruit/strawberry.png", "./images/fruit/orange.png", "./images/fruit/pear.png", "./images/fruit/lime.png", "./images/fruit/blueberry.png"];
-var counterImages = ["./images/counter dots/red_counter.png", "./images/counter dots/orange_counter.png", "./images/counter dots/yellow_counter.png", "./images/counter dots/green_counter.png", "./images/counter dots/blue_counter.png"];
+var counterImages = ["./images/counter_dots/red_counter.png", "./images/counter_dots/orange_counter.png", "./images/counter_dots/yellow_counter.png", "./images/counter_dots/green_counter.png", "./images/counter_dots/blue_counter.png"];
 var numColors = ["#e7462b", "#ff8b0e", "#ffd321", "#9fca38", "#20abc4"];
 var beadCount = 10;
 var beadRows = 5;
@@ -677,14 +677,14 @@ function runHowToAnimation()
 {	
 	$('#htpCup').removeClass('fullCup').addClass('emptyCup');
 	$('#quest1Hint').fadeIn(250, function() {	
-		$('#quest1Hint').delay(4000).fadeOut(250, function() {
+		$('#quest1Hint').delay(3000).fadeOut(250, function() {
 				$('#moveBeadsHint').fadeIn(250, function() {
-					$('#moveBeadsHint').delay(4000).fadeOut(250, function() {
+					$('#moveBeadsHint').delay(3000).fadeOut(250, function() {
 							$('#countHint').fadeIn(250, function() {
-								$('#countHint').delay(4000).fadeOut(250, function() {
+								$('#countHint').delay(3000).fadeOut(250, function() {
 										$('#cupFillHint').fadeIn(250, function() {
 											runCupAnimation();
-											$('#cupFillHint').delay(4000).fadeOut(250, function() {	
+											$('#cupFillHint').delay(3000).fadeOut(250, function() {	
 												introMusicLoop.pause();	
 												beginGame.play();
 												handleStartClick(null);

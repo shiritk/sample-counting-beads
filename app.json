@@ -1,5 +1,5 @@
 {
-  "repository" : "sample-counting-beads"
+  "repository" : "sample-counting-beads",
   "caption": "Counting Beads Game",
   "tooltip": "A simple HTML5 game for kids.",
   "description": "A simple game built using HTML5, JavaScript, CSS3, and jQuery that teaches young kids counting up to 50. ",
