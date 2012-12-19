@@ -12,7 +12,32 @@
 
 var lictimer;
 
-function onclickLicenseBtn() {
+function touchScroll(id){
+    if(isTouchDevice()){ //if touch events exist...
+		var el=document.getElementById(id);
+		var scrollStartPos=0;
+
+		el.addEventListener("touchstart", function(event) {
+			scrollStartPos=this.scrollTop+event.touches[0].pageY;
+			event.preventDefault();
+		},false);
+
+		el.addEventListener("touchmove", function(event) {
+			this.scrollTop=scrollStartPos-event.touches[0].pageY;
+			event.preventDefault();
+		},false);
+	}
+}
+
+function isTouchDevice(){
+	try{
+		document.createEvent("TouchEvent");
+		return true;
+	}catch(e){
+		return false;
+	}
+}
+function onclickInfoBtn() {
     var lpage = document.getElementById("licensepage");
     var hpage = document.getElementById("introPage");
 
@@ -34,29 +59,8 @@ function onclickLicBack()
 }
 
 function loadLicenseTxt() {
-    if (typeof window.device !== "undefined") { // running in PhoneGap
-
-        $.get('README.txt', function (data) {
-            var divLicense = document.getElementById("licensetext");
-            divLicense.innerText = data;
-        });
-    }  else {
-        // running as web app from Browser, so use iframe to display the README.txt
-        console.log("***Test: read README.txt iframe");
-
-        var licPage = document.getElementById("licensepage");
-        var licEle = document.getElementById("licensetext");
-
-        var frmEle = document.createElement("iframe");
-
-        // Web page 
-        frmEle.setAttribute("src", "README.txt");
-
-        frmEle.style.height = window.innerHeight * 0.88 + "px";
-        frmEle.style.width = window.innerWidth * 0.995 + "px";
-
-        licPage.replaceChild(frmEle, licEle);
-
-        frmEle.setAttribute('id', "licensetext");
-    }
+   $.get('README.txt', function (data) {
+        var divLicense = document.getElementById("licensetext");
+        divLicense.innerText = data;
+    });
 }

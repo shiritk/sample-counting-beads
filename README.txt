@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------
 												
-    COUNTING BEADS Modificatin Notes
+    COUNTING BEADS Modification Notes
 
 ----------------------------------------------------------------------------
 This sample application is modified from original Tizen* Counting Beads game app. 

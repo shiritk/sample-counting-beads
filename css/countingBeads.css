@@ -290,10 +290,10 @@ body:hover #blueBerry {
 	z-index:3;
 	font-family: Slackey;
 	color: #e7462b;		
-	left: -2%;
+	left: 2%;
 	top: 85%; 
     line-height: 37px;  
-	text-align: center;
+	text-align: left;
 	position: absolute;	
 	-webkit-transition: font-size 250ms;
 	-moz-transition: font-size 250ms;
@@ -1042,8 +1042,5 @@ body:hover #sbFinishPage, #orngFinishPage, #pearFinishPage, #limeFinishPage, #bb
     #slideMsg {
     	top: 65%; /*397px;*/
 	    font-size: 18pt;
-    }
-    #gpRestart, #htpRestart {
-	    left: -6%; /*28px;*/
     }
 }

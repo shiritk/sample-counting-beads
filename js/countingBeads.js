@@ -26,6 +26,7 @@ var curWinWidth=0;
 var fruiteBarPopulatedGamePage=0; 
 var fruiteBarPopulatedHowtoPage=0; 
 var init_done=false;
+var cBarFruits=13; 
 
 var introMusicLoop, beginGame, fillCup, gameWin, introMusic, moveBead, startClick;
 
@@ -109,8 +110,8 @@ function populateBars(fromPage)
 	
 	for(var i=0;i<5;i++) {
 		var elem = document.getElementById(prefix+"Bar"+i);
-        // set fruite image size: each bar holds 15 fruits; bar-width: window.innerWidth*0.66
-        var imgwidth = (window.innerWidth*0.66)/15.0;
+        // set fruite image size: each bar holds 13 fruits; bar-width: window.innerWidth*0.66
+        var imgwidth = (window.innerWidth*0.66)/cBarFruits;
         var imgscale = imgwidth/fruits[(i)].width;
         var leftwidth = 0;
 
@@ -153,7 +154,7 @@ function initCells()
 	var barWidth = window.innerWidth*0.66; 
 	for(var i=0;i<fruits.length;i++) {
 		var leftRightBead =	{
-			cellsInRow : 15, 
+			cellsInRow : cBarFruits, 
 			leftBeads : beadCount,
 			rightBeads : 0,
 		};
@@ -308,6 +309,7 @@ function init()
     init_done = true; 
 
     $(window).resize($.debounce(250, handleResizeWin));
+    touchScroll("licensetext");
 
     // debug music issue
     if (myDeviceSupport.HTML5_audio_mp3)
@@ -481,7 +483,7 @@ function handleBeadClick(event)
 			rightBeads = beadsPos[row].rightBeads;
 		}
 
-		toPos = toIndex*((window.innerWidth*0.66)/15.0);
+		toPos = toIndex*((window.innerWidth*0.66)/cBarFruits);
 		
         if($(target)[0].dataset)
 		    $(target)[0].dataset.y = (toIndex);	
@@ -652,7 +654,7 @@ function moveBackBeadsToPosition()
 				rightBeads = beadsPos[row].rightBeads;
 			}
 
-    		toPos = toIndex*((window.innerWidth*0.66)/15.0);
+    		toPos = toIndex*((window.innerWidth*0.66)/cBarFruits);
 			
             if($(target)[0].dataset)
 		        $(target)[0].dataset.y = (toIndex);	
@@ -777,11 +779,11 @@ function repopulateBars(fromPage)
 	else if(fromPage == howToPage) 
 		prefix = "htp";
 	
-    var imgwidth = (window.innerWidth*0.66)/15.0;
+    var imgwidth = (window.innerWidth*0.66)/cBarFruits;
 
 	for(var i=0;i<5;i++) {
 		var elem = document.getElementById(prefix+"Bar"+i);
-        // set fruite image size: each bar holds 15 fruits; bar-width: window.innerWidth*0.66
+        // set fruite image size: each bar holds 13 fruits; bar-width: window.innerWidth*0.66
         var imgscale = imgwidth/fruits[(i)].width;
 
 		for(var idx=0;idx<beadCount;idx++) {
