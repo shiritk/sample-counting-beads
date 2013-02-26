@@ -48,6 +48,7 @@
     <TargetPlatformVersion>8.0</TargetPlatformVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
     <PackageCertificateKeyFile>HTML5_CountingBeads_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">
@@ -63,9 +64,6 @@
     <Content Include="audiomp3\moveBead.mp3" />
     <Content Include="audiomp3\startClick.mp3" />
     <Content Include="css\countingBeads.css" />
-    <Content Include="css\countingBeads_original.css" />
-    <Content Include="css\deviceCheck.js" />
-    <Content Include="css\license-original.css" />
     <Content Include="css\license.css" />
     <Content Include="index.html" />
     <Content Include="fonts\Slackey.ttf" />
@@ -111,7 +109,6 @@
     <Content Include="images\intro\pear.png" />
     <Content Include="images\intro\strawberry.png" />
     <Content Include="js\countingBeads.js" />
-    <Content Include="css\default.css" />
     <Content Include="js\deviceCheck.js" />
     <Content Include="js\jquery-1.7.2.min.js" />
     <Content Include="js\jquery.ba-throttle-debounce.js" />

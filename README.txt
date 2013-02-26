@@ -8,6 +8,14 @@ It is ported to work with PhoneGap* on Android* and Windows 8* UI. The app
 demonstrates the use of the jQuery and jQuery Mobile libraries and targets
 young kids to teach them the basic counting.
 
+Intel(R) HTML5 Development Environment Beta
+-------------------------------------------
+This sample is part of the Intel(R) HTML5 Development Environment tool. 
+Please sign up the beta at http://software.intel.com/en-us/html5.
+To see the technical detail of the sample, please visit the sample article page 
+at http://software.intel.com/en-us/articles/porting-counting-beads-web-app-to-phonegap-app. 
+
+
 License Information Follows
 ---------------------------
 * abstract.txt
