@@ -5,5 +5,5 @@
 	"description":"A simple game built using HTML5, JavaScript, CSS3 and jQuery that teaches young kids counting up to 50.",
 	"articleurl":"http://software.intel.com/en-us/articles/porting-counting-beads-web-app-to-phonegap-app",
 	"categories":["jQuery","Game"],
-	"visible" : "true"
+	"visible" : "false"
 }
